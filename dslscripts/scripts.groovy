@@ -22,7 +22,8 @@ mavenJob('job-dsl-compile'){
 }
 
 mavenJob('job-dsl-package'){
-    customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
+    //customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
+    customWorkspace('/Users/archamisra/.jenkins/workspace/job-dsl-checkout')
    // mavenInstallation('Maven 3.3.9')
     goals('package')
     
@@ -35,7 +36,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war release@10.12.108.11:/opt/tomcat/webapps/'
+             shell 'sshpass -p "123456" scp /Users/archamisra/.jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war release@10.12.108.11:/opt/tomcat/webapps/'
       }
 }
 
