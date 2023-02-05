@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('tetradev01/hello-world-war', 'master')
+        github('arunarora9010/hello-world-war', 'master')
     }
       
    publishers {
@@ -12,7 +12,7 @@ job('job-dsl-checkout') {
 
 mavenJob('job-dsl-compile'){
    
-  customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
+  customWorkspace('/Users/archamisra/.jenkins/workspace/job-dsl-checkout')
   //mavenInstallation('Maven 3.3.9')
   goals('compile')
     
